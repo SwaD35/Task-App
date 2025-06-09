@@ -10,9 +10,7 @@
 A dynamic task management application developed during my internship using React Native and Expo. This cross-platform solution demonstrates proficiency in mobile app development with focus on user experience and functionality.
 
 ## 🎯 Key Features
-- Create, Read, Update, and Delete tasks
-- Priority levels (High, Medium, Low)
-- Due date management
+- Create, Read, and Delete tasks
 - Task status tracking
 - Intuitive user interface
 - Local data persistence
@@ -67,12 +65,6 @@ yarn start
 
 ## 🎨 Features Implementation
 
-### Task Management
-- CRUD operations for tasks
-- Priority-based organization
-- Due date assignment
-- Status tracking
-
 ### Data Persistence
 - Local storage using AsyncStorage
 - Efficient data management
@@ -89,20 +81,11 @@ yarn start
 - Functionality verification
 - Cross-platform compatibility
 
-## 🔮 Future Enhancements
-- [ ] Cloud synchronization
-- [ ] Push notifications
-- [ ] User authentication
-- [ ] Dark mode
-- [ ] Data analytics
 
 ## 👨‍💻 Developer Information
-- Developer: [Your Name]
-- Internship Duration: [Start Date] - [End Date]
-- Organization: [Company Name]
+- Developer: Swaraj Dhage
 
-## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
 ---
 *This project was developed as part of an internship program to demonstrate mobile application development capabilities using React Native and Expo.*
