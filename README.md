@@ -1,4 +1,5 @@
 # Task Management Application
+### Developed by Swaraj Dhage
 
 <p align="center">
   <img alt="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
