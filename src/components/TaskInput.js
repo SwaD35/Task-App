@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   TextInput,
@@ -9,9 +9,14 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS, SPACING, FONT_SIZES } from "../utils/constants";
 
-const TaskInput = ({ onAddTask, disabled = false }) => {
-  const [inputText, setInputText] = useState("");
+const TaskInput = ({ onAddTask, disabled = false, initialValue = "" }) => {
+  const [inputText, setInputText] = useState(initialValue);
   const [isFocused, setIsFocused] = useState(false);
+
+  // Update inputText if initialValue changes (for editing)
+  useEffect(() => {
+    setInputText(initialValue);
+  }, [initialValue]);
 
   const handleAddTask = () => {
     if (inputText.trim() === "") {

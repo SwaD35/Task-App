@@ -4,7 +4,7 @@ import * as SplashScreen from "expo-splash-screen";
 import HomeScreen from "./src/screens/HomeScreen";
 import SplashScreenComponent from "./src/screens/SplashScreen";
 
-// Prevent the splash screen from auto-hiding
+
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
@@ -14,7 +14,6 @@ export default function App() {
   useEffect(() => {
     async function prepare() {
       try {
-        // Pre-load fonts, make any API calls you need to do here
         // Simulate app loading time
         await new Promise((resolve) => setTimeout(resolve, 2000));
 
@@ -24,7 +23,6 @@ export default function App() {
         console.warn(e);
         setIsAppReady(true);
       } finally {
-        // Hide the expo splash screen
         await SplashScreen.hideAsync();
       }
     }
@@ -37,7 +35,7 @@ export default function App() {
   };
 
   if (!isAppReady) {
-    return null; // Return nothing while app is loading
+    return null;
   }
 
   if (showSplash) {

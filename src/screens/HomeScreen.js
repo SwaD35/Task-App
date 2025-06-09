@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { View, FlatList, StyleSheet, Platform, StatusBar } from "react-native";
+import { View, FlatList, StyleSheet, Platform, StatusBar, Modal, TouchableOpacity, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TaskInput from "../components/TaskInput";
 import TaskItem from "../components/TaskItem";
@@ -23,6 +23,8 @@ const getAndroidPadding = () => {
 
 const HomeScreen = () => {
   const [tasks, setTasks] = useState([]);
+  const [editingTask, setEditingTask] = useState(null);
+  const [editModalVisible, setEditModalVisible] = useState(false);
   const notificationInterval = useRef(null);
   const notificationIds = useRef({});
 
@@ -96,6 +98,21 @@ const HomeScreen = () => {
     }
   };
 
+  const handleEdit = (task) => {
+    setEditingTask(task);
+    setEditModalVisible(true);
+  };
+
+  const handleUpdateTask = (text) => {
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === editingTask.id ? { ...task, text } : task
+      )
+    );
+    setEditModalVisible(false);
+    setEditingTask(null);
+  };
+
   return (
     <SafeAreaView
       style={[
@@ -115,12 +132,34 @@ const HomeScreen = () => {
               task={item}
               onToggleComplete={handleToggleComplete}
               onDelete={handleDelete}
+              onEdit={handleEdit}
             />
           )}
           ListEmptyComponent={<EmptyState />}
           contentContainerStyle={styles.listContent}
           style={styles.list}
         />
+        <Modal
+          visible={editModalVisible}
+          animationType="slide"
+          transparent={true}
+          onRequestClose={() => setEditModalVisible(false)}
+        >
+          <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "rgba(0,0,0,0.3)" }}>
+            <View style={{ backgroundColor: COLORS.white, padding: 24, borderRadius: 16, width: "90%" }}>
+              <TaskInput
+                onAddTask={handleUpdateTask}
+                disabled={false}
+                initialValue={editingTask ? editingTask.text : ""}
+              />
+              <View style={{ flexDirection: "row", justifyContent: "flex-end", marginTop: 12 }}>
+                <TouchableOpacity onPress={() => setEditModalVisible(false)} style={{ marginRight: 12 }}>
+                  <Text style={{ color: COLORS.danger, fontSize: 16 }}>Cancel</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
       </View>
     </SafeAreaView>
   );

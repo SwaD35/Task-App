@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS, SPACING, FONT_SIZES } from "../utils/constants";
 
-const TaskItem = ({ task, onToggleComplete, onDelete, showTime = true }) => {
+const TaskItem = ({ task, onToggleComplete, onDelete, onEdit, showTime = true }) => {
   const handleDelete = () => {
     Alert.alert(
       "Delete Task",
@@ -66,6 +66,13 @@ const TaskItem = ({ task, onToggleComplete, onDelete, showTime = true }) => {
       >
         <Ionicons name="trash-outline" size={20} color={COLORS.danger} />
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => onEdit && onEdit(task)}
+        style={styles.editButton}
+        activeOpacity={0.7}
+      >
+        <Ionicons name="create-outline" size={20} color={COLORS.primary} />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -117,6 +124,11 @@ const styles = StyleSheet.create({
   deleteButton: {
     padding: SPACING.sm,
     borderRadius: 8,
+  },
+  editButton: {
+    padding: SPACING.sm,
+    borderRadius: 8,
+    marginLeft: 4,
   },
 });
 
