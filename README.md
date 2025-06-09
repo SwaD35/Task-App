@@ -25,16 +25,24 @@ A dynamic task management application developed during my internship using React
 ## 📸 Screenshots
 
 ### Home Screen
-[Insert Screenshot]
-> Task overview and management dashboard
+![Home Screen](./screenshot/homepage.jpg)
+> Task overview and management dashboard showcasing the main interface where users can view and manage their tasks.
 
-### Add Task Screen
-[Insert Screenshot]
-> Interface for creating new tasks
+### Task Management
+<p float="left">
+  <img src="./screenshot/editTask.jpg" width="300" alt="Edit Task" />
+  <img src="./screenshot/deleteTask.jpg" width="300" alt="Delete Task" />
+</p>
+> Left: Task editing interface for modifying existing tasks
+> Right: Task deletion confirmation dialog for safe task removal
 
-### Task Details
-[Insert Screenshot]
-> Detailed view of individual tasks
+### Notifications
+![Notification Screen](./screenshot/notification.jpg)
+> Task reminder notifications to keep users updated about their tasks
+
+### Loading Screen
+![Splash Screen](./screenshot/splashLoading.jpg)
+> Application splash screen showing the initial loading state
 
 ## ⚙️ Installation
 
