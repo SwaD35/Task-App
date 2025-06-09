@@ -59,11 +59,16 @@ npm install
 yarn install
 ```
 
-3. **Start the development server**
+3. **Install Expo CLI globally** (if not already installed)
 ```bash
-npm start
+npm install -g expo-cli
 # or
-yarn start
+yarn global add expo-cli
+```
+
+4. **Start the Expo development server**
+```bash
+npx expo start
 ```
 
 ## 📱 Running the App
