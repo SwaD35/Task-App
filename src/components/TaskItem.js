@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Alert } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Alert, Platform } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { COLORS, SPACING, FONT_SIZES } from "../utils/constants";
 
@@ -37,6 +37,7 @@ const TaskItem = ({ task, onToggleComplete, onDelete, onEdit, showTime = true })
     <View
       style={[styles.container, task.completed && styles.completedContainer]}
     >
+      <View style={styles.verticalBar} />
       <TouchableOpacity
         onPress={() => onToggleComplete(task.id)}
         style={styles.checkbox}
@@ -82,52 +83,80 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: COLORS.white,
-    padding: SPACING.lg,
+    paddingVertical: SPACING.lg,
+    paddingHorizontal: SPACING.xl,
     marginVertical: SPACING.xs,
     marginHorizontal: SPACING.xl,
-    borderRadius: 12,
-    shadowColor: COLORS.black,
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: COLORS.gray[200],
+    shadowColor: COLORS.gray[400],
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.06,
+    shadowRadius: 6,
     elevation: 2,
   },
   completedContainer: {
-    backgroundColor: COLORS.gray[50],
-    opacity: 0.8,
+    backgroundColor: COLORS.gray[100],
+    opacity: 0.7,
+  },
+  verticalBar: {
+    width: 8,
+    height: "100%",
+    borderRadius: 8,
+    backgroundColor: "#B5EAD7", // pastel green accent
+    marginRight: SPACING.lg,
   },
   checkbox: {
     marginRight: SPACING.md,
-    padding: SPACING.xs,
+    padding: 0,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: COLORS.gray[100],
+    justifyContent: "center",
+    alignItems: "center",
   },
   content: {
     flex: 1,
     paddingRight: SPACING.md,
   },
   taskText: {
-    fontSize: FONT_SIZES.md,
+    fontSize: FONT_SIZES.lg,
     color: COLORS.dark,
-    lineHeight: 22,
-    marginBottom: SPACING.xs,
+    lineHeight: 24,
+    fontWeight: "500",
+    fontFamily: Platform.OS === "ios" ? "San Francisco" : "Roboto",
   },
   completedText: {
     textDecorationLine: "line-through",
-    color: COLORS.gray[600],
+    color: COLORS.gray[400],
+    fontWeight: "400",
   },
   timeText: {
     fontSize: FONT_SIZES.xs,
-    color: COLORS.gray[500],
+    color: COLORS.gray[400],
+    marginTop: 2,
+    fontStyle: "italic",
   },
   deleteButton: {
-    padding: SPACING.sm,
-    borderRadius: 8,
+    padding: 0,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: COLORS.gray[100],
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: 4,
   },
   editButton: {
-    padding: SPACING.sm,
-    borderRadius: 8,
+    padding: 0,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: COLORS.gray[100],
+    justifyContent: "center",
+    alignItems: "center",
     marginLeft: 4,
   },
 });

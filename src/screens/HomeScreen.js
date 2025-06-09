@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { View, FlatList, StyleSheet, Platform, StatusBar, Modal, TouchableOpacity, Text } from "react-native";
+import { View, FlatList, StyleSheet, Platform, StatusBar, Modal, TouchableOpacity, Text, KeyboardAvoidingView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TaskInput from "../components/TaskInput";
 import TaskItem from "../components/TaskItem";
@@ -121,24 +121,32 @@ const HomeScreen = () => {
       ]}
       edges={["top", "left", "right"]}
     >
-      <StatusBar backgroundColor={COLORS.light} barStyle="dark-content" />
-      <View style={styles.container}>
-        <TaskInput onAddTask={handleAddTask} />
-        <FlatList
-          data={tasks}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => (
-            <TaskItem
-              task={item}
-              onToggleComplete={handleToggleComplete}
-              onDelete={handleDelete}
-              onEdit={handleEdit}
-            />
-          )}
-          ListEmptyComponent={<EmptyState />}
-          contentContainerStyle={styles.listContent}
-          style={styles.list}
-        />
+      <StatusBar backgroundColor={COLORS.gray[100]} barStyle="dark-content" />
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 24}
+      >
+        <View style={styles.container}>
+          <Text style={styles.title}>My Tasks</Text>
+          <FlatList
+            data={tasks}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <TaskItem
+                task={item}
+                onToggleComplete={handleToggleComplete}
+                onDelete={handleDelete}
+                onEdit={handleEdit}
+              />
+            )}
+            ListEmptyComponent={<EmptyState />}
+            contentContainerStyle={styles.listContent}
+            style={styles.list}
+            keyboardShouldPersistTaps="handled"
+          />
+          <TaskInput onAddTask={handleAddTask} />
+        </View>
         <Modal
           visible={editModalVisible}
           animationType="slide"
@@ -160,7 +168,7 @@ const HomeScreen = () => {
             </View>
           </View>
         </Modal>
-      </View>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
@@ -168,20 +176,38 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: COLORS.light,
+    backgroundColor: COLORS.gray[100],
   },
   container: {
     flex: 1,
-    backgroundColor: COLORS.light,
+    backgroundColor: COLORS.white,
     paddingBottom: 0,
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+    marginTop: 0,
+    shadowColor: "transparent",
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0,
+    shadowRadius: 0,
+    elevation: 0,
   },
   list: {
     flex: 1,
-    backgroundColor: COLORS.light,
+    backgroundColor: "transparent",
   },
   listContent: {
     flexGrow: 1,
-    paddingBottom: 24,
+    paddingBottom: 32,
+    paddingTop: 8,
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: '700',
+    color: COLORS.gray[800],
+    textAlign: 'center',
+    marginTop: 16,
+    marginBottom: 12,
+    fontFamily: Platform.OS === 'ios' ? 'San Francisco' : 'Roboto'
   },
 });
 

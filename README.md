@@ -111,6 +111,17 @@ npx expo start
 - Cross-platform compatibility
 
 
+## 🚧 Development Challenges & Expo Go Issues
+
+During the development of this application, I encountered several challenges, particularly related to the Expo Go environment:
+
+- **Push/Local Notification Issues:** Expo Go has limitations with handling background tasks and notifications, especially on iOS. Sometimes notifications would not trigger as expected, or would be delayed, due to restrictions in the Expo Go client and OS background execution policies.
+- **Native Module Limitations:** Some advanced features (like custom notification sounds or scheduling precise background jobs) are not fully supported in Expo Go, requiring either ejecting to Expo Bare workflow or using workarounds.
+- **Testing on Real Devices:** Certain features (like notifications) behave differently on simulators/emulators versus real devices. Debugging these inconsistencies required frequent device testing and reading Expo documentation.
+- **Hot Reload/Refresh Bugs:** Occasionally, hot reloading in Expo Go would cause state or notification listeners to behave unexpectedly, requiring a full reload or app restart.
+
+Despite these challenges, I was able to implement reliable local notifications and a smooth user experience by carefully reading Expo documentation, testing on multiple devices, and using best practices for React Native development.
+
 ## 👨‍💻 Developer Information
 - Developer: Swaraj Dhage
 
