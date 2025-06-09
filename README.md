@@ -1,43 +1,108 @@
-# My Universal React Project
+# Task Management Application
 
-<p>
-  <!-- iOS -->
-  <a href="https://itunes.apple.com/app/apple-store/id982107779">
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  </a>
-  <!-- Android -->
-  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample">
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  </a>
-  <!-- Web -->
-  <a href="https://docs.expo.dev/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
+<p align="center">
+  <img alt="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
+  <img alt="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
+  <img alt="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
 </p>
 
-## 🚀 How to use
+## 📱 Project Overview
+A dynamic task management application developed during my internship using React Native and Expo. This cross-platform solution demonstrates proficiency in mobile app development with focus on user experience and functionality.
 
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` or `npm run start` to start the bundler.
-- Open the project in a React runtime to try it:
-  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Any web browser
+## 🎯 Key Features
+- Create, Read, Update, and Delete tasks
+- Priority levels (High, Medium, Low)
+- Due date management
+- Task status tracking
+- Intuitive user interface
+- Local data persistence
 
-## Running/Modifying Native Code
+## 🔧 Technology Stack
+- React Native
+- Expo Framework
+- AsyncStorage
+- React Navigation
+- Native Base UI
 
-You can generate native iOS and Android projects from your Expo config file (**app.json**/ **app.config.js**) by runnning `npx expo prebuild`. These native projects can then be compiled and run via XCode and Android Studio.
+## 📸 Screenshots
 
-> 💡 Learn more about [native code in Expo](https://docs.expo.dev/workflow/customizing/)
+### Home Screen
+[Insert Screenshot]
+> Task overview and management dashboard
 
-## Publishing
+### Add Task Screen
+[Insert Screenshot]
+> Interface for creating new tasks
 
-- Deploy the native app to the App store and Play store using this guide: [Deployment](https://docs.expo.dev/distribution/app-stores/).
-- Deploy the website using this guide: [Web deployment](https://docs.expo.dev/distribution/publishing-websites/).
+### Task Details
+[Insert Screenshot]
+> Detailed view of individual tasks
 
-## 📝 Notes
+## ⚙️ Installation
 
-- Learn more about [Universal React](https://docs.expo.dev/).
-- See what API and components are [available in the React runtimes](https://docs.expo.dev/versions/latest/).
-- Find out more about developing apps and websites: [Guides](https://docs.expo.dev/guides/).
+1. **Clone the repository**
+```bash
+git clone [repository-url]
+```
+
+2. **Install dependencies**
+```bash
+npm install
+# or
+yarn install
+```
+
+3. **Start the development server**
+```bash
+npm start
+# or
+yarn start
+```
+
+## 📱 Running the App
+
+- iOS: Press 'i' in terminal or run on iOS simulator
+- Android: Press 'a' in terminal or run on Android emulator
+- Web: Press 'w' in terminal or open in web browser
+
+## 🎨 Features Implementation
+
+### Task Management
+- CRUD operations for tasks
+- Priority-based organization
+- Due date assignment
+- Status tracking
+
+### Data Persistence
+- Local storage using AsyncStorage
+- Efficient data management
+- Offline functionality
+
+### User Interface
+- Clean and intuitive design
+- Responsive layouts
+- Cross-platform consistency
+- Interactive elements
+
+## 🧪 Testing
+- Component testing
+- Functionality verification
+- Cross-platform compatibility
+
+## 🔮 Future Enhancements
+- [ ] Cloud synchronization
+- [ ] Push notifications
+- [ ] User authentication
+- [ ] Dark mode
+- [ ] Data analytics
+
+## 👨‍💻 Developer Information
+- Developer: [Your Name]
+- Internship Duration: [Start Date] - [End Date]
+- Organization: [Company Name]
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+*This project was developed as part of an internship program to demonstrate mobile application development capabilities using React Native and Expo.*
