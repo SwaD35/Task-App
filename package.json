@@ -1,9 +1,16 @@
 {
   "dependencies": {
+    "@expo/vector-icons": "^14.1.0",
+    "@react-native-async-storage/async-storage": "^2.2.0",
     "expo": "^53.0.4",
+    "expo-constants": "^17.1.6",
+    "expo-device": "^7.1.4",
+    "expo-notifications": "^0.31.3",
+    "expo-splash-screen": "^0.30.9",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.1",
+    "react-native-safe-area-context": "^5.4.1",
     "react-native-web": "^0.20.0"
   },
   "devDependencies": {
