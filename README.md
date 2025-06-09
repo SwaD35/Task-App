@@ -3,14 +3,13 @@
 <p align="center">
   <img alt="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
   <img alt="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <img alt="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
 </p>
 
 ## 📱 Project Overview
-A dynamic task management application developed during my internship using React Native and Expo. This cross-platform solution demonstrates proficiency in mobile app development with focus on user experience and functionality.
+A dynamic task management application developed as a internship assignment using React Native and Expo. This cross-platform solution demonstrates proficiency in mobile app development with focus on user experience and functionality.
 
 ## 🎯 Key Features
-- Create, Read, and Delete tasks
+- Create, Read, Update and Delete tasks
 - Task status tracking
 - Intuitive user interface
 - Local data persistence
@@ -85,6 +84,21 @@ yarn start
 - Cross-platform consistency
 - Interactive elements
 
+### Component Architecture
+- Modular component design for maximum reusability
+- Separate components for:
+  - TaskItem: Task display component with completion toggle, edit and delete functionality
+  - TaskInput: Reusable input component for creating and editing tasks
+  - EmptyState: Customizable empty state display component
+  - LoadingScreen: Animated loading screen with progress indicators
+- Component Features:
+  - Props-based configuration for flexibility
+  - Consistent styling
+  - Integration with AsyncStorage for data persistence
+  - Built-in error handling and validation
+  - Responsive design across different screen sizes
+
+
 ## 🧪 Testing
 - Component testing
 - Functionality verification
@@ -97,4 +111,4 @@ yarn start
 
 
 ---
-*This project was developed as part of an internship program to demonstrate mobile application development capabilities using React Native and Expo.*
+*This project was developed as part of an internship application assignment to demonstrate mobile application development capabilities using React Native and Expo.*
